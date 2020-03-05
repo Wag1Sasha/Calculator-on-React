@@ -1,0 +1,27 @@
+.app {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  width: 100%;
+  margin-top:100px;
+  background-color: rgb(90, 190, 190);
+}
+.calc-wrapper{
+  width: 400px;
+  height: 600px;
+
+}
+
+.row{
+  display: flex;
+  width: 100%;
+}
+h1{
+  text-align: center;
+  position: absolute;
+  top:120px;
+  color: antiquewhite;
+  text-transform: uppercase;
+  text-decoration:underline;
+}
