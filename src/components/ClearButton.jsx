@@ -1,16 +1,17 @@
-import React from 'react';
-import './ClearButton.css';
+import React from "react";
+import "./ClearButton.css";
+import { AppContext } from "../context/context";
 
-
-
-class ClearButton extends React.Component{
-    render(){
-        return(
-            <div className='clearButton' onClick={()=>this.props.handleClear()}>
-                {this.props.children}
-            </div>
-        )
-    }
+export default function ClearButton({ name }) {
+  const { state, dispatch } = React.useContext(AppContext);
+  return (
+    <div
+      className="clearButton"
+      onClick={() => {
+        dispatch({ type: "clear" });
+      }}
+    >
+      {name}
+    </div>
+  );
 }
-
-export default ClearButton;

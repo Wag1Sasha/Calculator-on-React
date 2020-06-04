@@ -1,24 +1,17 @@
-import React from 'react';
-import './Button.css';
+import React from "react";
+import "./Button.css";
+import { AppContext } from "../context/context";
 
-
-
-class Button extends React.Component{
-
-    isOperator = (val) =>{
-        return !isNaN(val) || val === "." || val === "=";
-    }
-    render(){
-        return(
-            <div className={`button ${this.isOperator(this.props.children) ? "" : "operator"}`}
-            onClick ={()=> this.props.HandleClick(this.props.children)}
-            >
-                
-                {this.props.children}
-                
-            </div>
-        )
-    }
+export default function Button({ name, className, type }) {
+  const { state, dispatch } = React.useContext(AppContext);
+  return (
+    <div
+      className={className}
+      onClick={() => {
+        dispatch({ value: name, type });
+      }}
+    >
+      {name}
+    </div>
+  );
 }
-
-export default Button;
